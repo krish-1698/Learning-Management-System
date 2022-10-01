@@ -14,7 +14,10 @@ import MenuIcon from '@mui/icons-material/Menu';
 import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
 import NotificationsIcon from '@mui/icons-material/Notifications';
 import { secondaryListItems, studentListItems } from '../../lib/ListItems/ListItems';
+import CourseCard from '../../components/CourseCard/CourseCard';
+import { Container, Grid } from '@mui/material';
 
+import web_app_dev_img from '../../images/CourseCardImg/web-application-development.jpg';
 
 const drawerWidth = 240;
 
@@ -64,7 +67,7 @@ const Drawer = styled(MuiDrawer, { shouldForwardProp: (prop) => prop !== 'open' 
 
 const mdTheme = createTheme();
 
-function SidebarContent({titleHeading}) {
+function SidebarContent({ titleHeading }) {
   const [open, setOpen] = React.useState(true);
   const toggleDrawer = () => {
     setOpen(!open);
@@ -130,7 +133,7 @@ function SidebarContent({titleHeading}) {
             {secondaryListItems}
           </List>
         </Drawer>
-        
+
         <Box
           component="main"
           sx={{
@@ -144,12 +147,26 @@ function SidebarContent({titleHeading}) {
           }}
         >
           <Toolbar />
+
+          <Container maxWidth="lg" sx={{ pt:2, mt: 4, mb: 2 }}>
+            <Grid container spacing={3}>
+              <CourseCard title={"Web Application Development"} img={web_app_dev_img} />
+              <CourseCard title={"Web Application Development"} img={web_app_dev_img} />
+              <CourseCard title={"Web Application Development"} img={web_app_dev_img} />
+              <CourseCard title={"Web Application Development"} img={web_app_dev_img} />
+              <CourseCard title={"Web Application Development"} img={web_app_dev_img} />
+              <CourseCard title={"Web Application Development"} img={web_app_dev_img} />
+              {/* Chart */}
+              {/* Recent Deposits */}
+              {/* Recent Orders */}
+            </Grid>
+          </Container>
         </Box>
       </Box>
     </ThemeProvider>
   );
 }
 
-export default function Sidebar({title}) {
+export default function Sidebar({ title }) {
   return <SidebarContent titleHeading={title} />;
 }
