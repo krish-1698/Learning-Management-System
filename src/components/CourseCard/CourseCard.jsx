@@ -13,7 +13,7 @@ function CourseCard({title, img}) {
                 <CardActionArea>
                     <CardMedia
                         component="img"
-                        height="140"
+                        height="130"
                         image={img}
                         alt=""
                     />
