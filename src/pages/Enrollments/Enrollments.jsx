@@ -5,7 +5,7 @@ import Sidebar from '../../lib/Sidebar/Sidebar'
 function Enrollments() {
   return (
     <div>
-        <Sidebar title={"Enrollments"} coursesList={enrolledCoursesListItems} />
+        <Sidebar title={"Enrollments"} coursesList={enrolledCoursesListItems}/>
     </div>
   )
 }

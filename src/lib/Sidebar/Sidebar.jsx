@@ -15,6 +15,7 @@ import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
 import NotificationsIcon from '@mui/icons-material/Notifications';
 import { secondaryListItems, studentListItems } from '../../lib/ListItems/ListItems';
 import { Container, Grid } from '@mui/material';
+import GradesTable from '../GradesTable/GradesTable';
 
 const drawerWidth = 240;
 
@@ -64,7 +65,7 @@ const Drawer = styled(MuiDrawer, { shouldForwardProp: (prop) => prop !== 'open' 
 
 const mdTheme = createTheme();
 
-function SidebarContent({ titleHeading, coursesList }) {
+function SidebarContent({ titleHeading, coursesList, gradesTable }) {
   const [open, setOpen] = React.useState(true);
   const toggleDrawer = () => {
     setOpen(!open);
@@ -149,7 +150,8 @@ function SidebarContent({ titleHeading, coursesList }) {
             <Grid container spacing={3}>
 
               {coursesList}
-
+              {gradesTable}
+              
             </Grid>
           </Container>
         </Box>
@@ -158,6 +160,6 @@ function SidebarContent({ titleHeading, coursesList }) {
   );
 }
 
-export default function Sidebar({ title, coursesList }) {
-  return <SidebarContent titleHeading={title} coursesList={coursesList}/>;
+export default function Sidebar({ title, coursesList, gradesTable }) {
+  return <SidebarContent titleHeading={title} coursesList={coursesList} gradesTable={gradesTable}/>;
 }
