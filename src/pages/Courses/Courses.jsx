@@ -5,7 +5,7 @@ import Sidebar from '../../lib/Sidebar/Sidebar'
 function Courses() {
   return (
     <div>
-        <Sidebar title={"All Courses"} coursesList={allCoursesListItems} />
+        <Sidebar title={"All Courses"} component={allCoursesListItems} />
     </div>
   )
 }
