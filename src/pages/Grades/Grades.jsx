@@ -5,7 +5,7 @@ import Sidebar from '../../lib/Sidebar/Sidebar'
 function Grades() {
     return (
         <div>
-            <Sidebar title={"Grades"} gradesTable={<GradesTable/>} />
+            <Sidebar title={"Grades"} component={<GradesTable/>} />
         </div>
     )
 }

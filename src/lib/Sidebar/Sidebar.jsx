@@ -65,7 +65,7 @@ const Drawer = styled(MuiDrawer, { shouldForwardProp: (prop) => prop !== 'open' 
 
 const mdTheme = createTheme();
 
-function SidebarContent({ titleHeading, coursesList, gradesTable }) {
+function SidebarContent({ titleHeading, coursesList, gradesTable, mainComp }) {
   const [open, setOpen] = React.useState(true);
   const toggleDrawer = () => {
     setOpen(!open);
@@ -149,8 +149,7 @@ function SidebarContent({ titleHeading, coursesList, gradesTable }) {
           <Container maxWidth="lg" sx={{ pt: 2, mt: 4, mb: 2 }}>
             <Grid container spacing={3}>
 
-              {coursesList}
-              {gradesTable}
+              {mainComp}
               
             </Grid>
           </Container>
@@ -160,6 +159,6 @@ function SidebarContent({ titleHeading, coursesList, gradesTable }) {
   );
 }
 
-export default function Sidebar({ title, coursesList, gradesTable }) {
-  return <SidebarContent titleHeading={title} coursesList={coursesList} gradesTable={gradesTable}/>;
+export default function Sidebar({ title, coursesList, gradesTable, component }) {
+  return <SidebarContent titleHeading={title} coursesList={coursesList} gradesTable={gradesTable} mainComp={component}/>;
 }
