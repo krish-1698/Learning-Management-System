@@ -1,13 +1,34 @@
-import * as React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Logout, Dashboard, LocalLibrary, BookmarkAdded, Grade } from "@mui/icons-material";
 import NavBarItem from '../../components/NavBarItem/NavBarItem';
 import { Link } from 'react-router-dom';
 import CourseCard from '../../components/CourseCard/CourseCard';
 import web_app_dev_img from '../../images/CourseCardImg/web-application-development.jpg';
+import axios from 'axios';
+
+ //////
+function AllCoursesDataFetching(){
+
+  const [courses, setCourses] = useState([])
+
+  useEffect(()=>{
+    axios.get('http://localhost:8080/api/v1/course/getAllCourses')
+    .then(res => {
+      console.log(res)
+    })
+    .catch(err => {
+      console.log(err)
+    })
+  })
+}
+
+//////
 
 export const allCoursesListItems = (
+
   <React.Fragment>
     {
+      // CoursesDataFetching()
       [
         {
           "title": "title 1",
