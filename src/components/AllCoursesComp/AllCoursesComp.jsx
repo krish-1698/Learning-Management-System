@@ -4,7 +4,9 @@ import React, { useEffect, useState } from "react";
 import CourseCard from "../CourseCard/CourseCard";
 
 function AllCoursesComp() {
-  const [courses, setCourses] = useState([]);
+  const [courses, setCourses] = useState([
+    
+  ]);
 
   useEffect(() => {
     axios
