@@ -15,6 +15,7 @@ function Notification() {
     setAnchorEl(null);
   };
 
+  
   const open = Boolean(anchorEl);
   const id = open ? 'simple-popover' : undefined;
 
@@ -38,18 +39,26 @@ function Notification() {
         }}
       >
         <Typography sx={{ p: 2 }}>
-          The content of the Popover.
+          <Box sx={{ fontWeight: 'bold' }}>Notifications</Box>
           <Box
             sx={{
               width: 300,
-              height: 300,
-              backgroundColor: '#64b5f6',
+              height: 400,
+              fontSize: 14,
+              borderRadius: 1.5,
+              backgroundColor: '#e3f2fd',  
               // '&:hover': {
               //   backgroundColor: '#90caf9',
               //   opacity: [0.9, 0.8, 0.7],
               // },
             }}
-          />
+          >
+            <Box sx={{ marginTop:2, marginBottom:1, p:1}}>GNCT 32216 - Internship(2019/2020) content change</Box>
+            <Box sx={{ marginBottom:1, p:1 }}>GNCT 32216 - Internship(2019/2020) content change</Box>
+            <Box sx={{ marginBottom:1, p:1 }}>GNCT 32216 - Internship(2019/2020) content change</Box>
+            <Box sx={{ marginBottom:1, p:1 }}>GNCT 32216 - Internship(2019/2020) content change</Box>
+            <Box sx={{ marginBottom:1, p:1 }}>GNCT 32216 - Internship(2019/2020) content change</Box>
+          </Box>
         </Typography>
       </Popover>
     </div>
