@@ -8,13 +8,7 @@ import StudentsEvoluation from "../../lib/StudentsEvoluation/StudentsEvoluation"
 function Enrollments() {
   // enrollement page number 1 => View all enrollments for both lecturer and student
   // enrollement page number 2 => Lecturer side course anouncements and student evoluation
-<<<<<<< HEAD
   const [enrollPageNumber, setEnrollPageNumber] = useState(3);
-=======
-  
-  const [enrollPageNumber, setEnrollPageNumber] = useState(2);
-
->>>>>>> d69bc84a5a80c78646a91281a8a039f2c1790af3
 
   return (
     <Box>
