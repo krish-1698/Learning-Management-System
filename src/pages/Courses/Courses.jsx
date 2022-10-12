@@ -6,9 +6,9 @@ import Sidebar from '../../lib/Sidebar/Sidebar'
 function Courses() {
   return (
     <div>
-        {/* <Sidebar title={"All Courses"} component={allCoursesListItems} /> */}
-        {/* <Sidebar title={"All Courses"} component={<AllCoursesComp />} /> */}
-        {/* <Sidebar title={"Enrollments"} component={allCoursesListItems} /> */}
+      <Sidebar title={"All Courses"} component={allCoursesListItems} />
+      {/* <Sidebar title={"All Courses"} component={<AllCoursesComp />} /> */}
+      {/* <Sidebar title={"Enrollments"} component={allCoursesListItems} /> */}
     </div>
   )
 }
