@@ -1,17 +1,7 @@
+import { Visibility, VisibilityOff } from "@mui/icons-material";
+import { Box, Button, FormControl, IconButton, InputAdornment, InputLabel, MenuItem, OutlinedInput, Paper, Select, TextField, Typography } from "@mui/material";
 import * as React from "react";
-
-import Box from "@mui/material/Box";
-import TextField from "@mui/material/TextField";
-import InputLabel from "@mui/material/InputLabel";
-import OutlinedInput from "@mui/material/OutlinedInput";
-import InputAdornment from "@mui/material/InputAdornment";
-import IconButton from "@mui/material/IconButton";
-import VisibilityOff from "@mui/icons-material/VisibilityOff";
-import Visibility from "@mui/icons-material/Visibility";
-import FormControl from "@mui/material/FormControl";
-import Button from '@mui/material/Button';
-import MenuItem from '@mui/material/MenuItem';
-import Select from '@mui/material/Select';
+import { Link } from "react-router-dom";
 
 function Register() {
   const [values, setValues] = React.useState({
@@ -46,8 +36,12 @@ function Register() {
 
   //return
   return (
-    <div>
-      <Box component="form" sx={{"& > :not(style)": { m: 2, width: "50vw"} }} noValidate autoComplete="off">
+    <div align="center">
+      <Paper elevatio={20}  sx={{  width: '75%', overflow: 'hidden' }}>
+      <Box component="form"  sx={{"& > :not(style)": { m: 1, width: "50vw"} }} noValidate autoComplete="off">
+        <Box p={2}><h1>Register</h1></Box>
+        
+
         <TextField id="studentId" label="Student Id" variant="outlined" />
         <TextField id="name" label="Name" variant="outlined" />
         <TextField id="email" label="Email" variant="outlined" />
@@ -116,7 +110,13 @@ function Register() {
       </FormControl>
             
         <Button variant="contained">Register</Button>
+        
       </Box>
+
+      <Box  m={4}>
+        <Typography align="center" > Already Registered?<Link to={"#"}>Sign In</Link></Typography>
+      </Box>
+      </Paper>
     </div>
   );
 }
