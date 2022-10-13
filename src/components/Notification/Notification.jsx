@@ -43,7 +43,7 @@ function Notification() {
           <Box
             sx={{
               width: 300,
-              height: 400,
+              height: '25%',
               fontSize: 14,
               borderRadius: 1.5,
               backgroundColor: '#e3f2fd',  
@@ -53,11 +53,20 @@ function Notification() {
               // },
             }}
           >
-            <Box sx={{ marginTop:2, marginBottom:1, p:1}}>GNCT 32216 - Internship(2019/2020) content change</Box>
+            <Typography variant='body1' mb={1} ml={1} fontSize={14} p={1}>GNCT 32216 - Internship(2019/2020) content change</Typography>
+            <Typography variant='body1' mb={1} ml={1} fontSize={14} p={1}>GNCT 32216 - Internship(2019/2020) content change</Typography>
+            <Typography variant='body1' mb={1} ml={1} fontSize={14} p={1}>GNCT 32216 - Internship(2019/2020) content change</Typography>
+            <Typography variant='body1' mb={1} ml={1} fontSize={14} p={1}>GNCT 32216 - Internship(2019/2020) content change</Typography>
+            <Typography variant='body1' mb={1} ml={1} fontSize={14} p={1}>GNCT 32216 - Internship(2019/2020) content change</Typography>
+            <Typography variant='body1' mb={1} ml={1} fontSize={14} p={1}>GNCT 32216 - Internship(2019/2020) content change</Typography>
+            {/* <Typography variant='body1' mb={1} ml={1} fontSize={14} p={1}>GNCT 32216 - Internship(2019/2020) content change</Typography>
+            <Typography variant='body1' mb={1} ml={1} fontSize={14} p={1}>GNCT 32216 - Internship(2019/2020) content change</Typography>
+            <Typography variant='body1' mb={1} ml={1} fontSize={14} p={1}>GNCT 32216 - Internship(2019/2020) content change</Typography> */}
+            {/* <Box sx={{ marginTop:2, marginBottom:1, p:1}}>GNCT 32216 - Internship(2019/2020) content change</Box>
             <Box sx={{ marginBottom:1, p:1 }}>GNCT 32216 - Internship(2019/2020) content change</Box>
             <Box sx={{ marginBottom:1, p:1 }}>GNCT 32216 - Internship(2019/2020) content change</Box>
             <Box sx={{ marginBottom:1, p:1 }}>GNCT 32216 - Internship(2019/2020) content change</Box>
-            <Box sx={{ marginBottom:1, p:1 }}>GNCT 32216 - Internship(2019/2020) content change</Box>
+            <Box sx={{ marginBottom:1, p:1 }}>GNCT 32216 - Internship(2019/2020) content change</Box> */}
           </Box>
         </Typography>
       </Popover>
