@@ -25,6 +25,7 @@ function AllCoursesDataFetching() {
 
 //////
 
+
 export const allCoursesListItems = (
 
   <React.Fragment>
@@ -32,10 +33,12 @@ export const allCoursesListItems = (
       // CoursesDataFetching()
       [
         {
+          "status": '1',
           "title": "title 1",
           "image": web_app_dev_img
         },
         {
+          "status": '1',
           "title": "title 2",
           "image": web_app_dev_img
         },
@@ -64,10 +67,10 @@ export const allCoursesListItems = (
           <CourseCard title={item.title} img={item.image} />
         </Link>
       ))
-
     }
   </React.Fragment>
 );
+
 
 export const enrolledCoursesListItems = (
   <React.Fragment>
