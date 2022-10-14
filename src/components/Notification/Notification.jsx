@@ -3,6 +3,7 @@ import { Popover } from "@mui/material";
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import NotificationsIcon from '@mui/icons-material/Notifications';
+import NotificationComp from './NotificationComp';
 
 function Notification() {
   const [anchorEl, setAnchorEl] = React.useState(null);
@@ -43,21 +44,32 @@ function Notification() {
           <Box
             sx={{
               width: 300,
-              height: 400,
+              height: '25%',
               fontSize: 14,
               borderRadius: 1.5,
-              backgroundColor: '#e3f2fd',  
-              // '&:hover': {
-              //   backgroundColor: '#90caf9',
-              //   opacity: [0.9, 0.8, 0.7],
-              // },
+              // backgroundColor: '#e3f2fd',  
             }}
           >
-            <Box sx={{ marginTop:2, marginBottom:1, p:1}}>GNCT 32216 - Internship(2019/2020) content change</Box>
-            <Box sx={{ marginBottom:1, p:1 }}>GNCT 32216 - Internship(2019/2020) content change</Box>
-            <Box sx={{ marginBottom:1, p:1 }}>GNCT 32216 - Internship(2019/2020) content change</Box>
-            <Box sx={{ marginBottom:1, p:1 }}>GNCT 32216 - Internship(2019/2020) content change</Box>
-            <Box sx={{ marginBottom:1, p:1 }}>GNCT 32216 - Internship(2019/2020) content change</Box>
+
+          {
+            [
+              {
+                title:"GNCT 32216 - Internship(2019/2020)",
+                description: "content change"
+              },
+              {
+                title:"GNCT 32216 - Internship(2019/2020)",
+                description: "content change"
+              },
+              {
+                title:"GNCT 32216 - Internship(2019/2020)",
+                description: "content change"
+              },
+            ].map((item) => (
+              <NotificationComp title={item.title} description={item.description}/>
+            ))
+          }
+  
           </Box>
         </Typography>
       </Popover>
