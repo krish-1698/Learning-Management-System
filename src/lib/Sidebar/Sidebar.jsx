@@ -9,13 +9,11 @@ import List from '@mui/material/List';
 import Typography from '@mui/material/Typography';
 import Divider from '@mui/material/Divider';
 import IconButton from '@mui/material/IconButton';
-import Badge from '@mui/material/Badge';
 import MenuIcon from '@mui/icons-material/Menu';
 import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
-import NotificationsIcon from '@mui/icons-material/Notifications';
 import { secondaryListItems, studentListItems } from '../../lib/ListItems/ListItems';
 import { Container, Grid } from '@mui/material';
-import GradesTable from '../GradesTable/GradesTable';
+import Notification from '../../components/Notification/Notification';
 
 const drawerWidth = 240;
 
@@ -102,11 +100,19 @@ function SidebarContent({ titleHeading, coursesList, gradesTable, mainComp }) {
             >
               {titleHeading}
             </Typography>
-            <IconButton color="inherit">
+
+            {/* notification icon */}
+            {/* <IconButton color="inherit">
               <Badge badgeContent={4} color="secondary">
                 <NotificationsIcon />
               </Badge>
-            </IconButton>
+            </IconButton> */}
+
+            {/* notification popover   */}
+            <div>
+              <Notification />
+            </div>
+
           </Toolbar>
         </AppBar>
 
@@ -150,7 +156,7 @@ function SidebarContent({ titleHeading, coursesList, gradesTable, mainComp }) {
             <Grid container spacing={3}>
 
               {mainComp}
-              
+
             </Grid>
           </Container>
         </Box>
@@ -160,5 +166,5 @@ function SidebarContent({ titleHeading, coursesList, gradesTable, mainComp }) {
 }
 
 export default function Sidebar({ title, coursesList, gradesTable, component }) {
-  return <SidebarContent titleHeading={title} coursesList={coursesList} gradesTable={gradesTable} mainComp={component}/>;
+  return <SidebarContent titleHeading={title} coursesList={coursesList} gradesTable={gradesTable} mainComp={component} />;
 }

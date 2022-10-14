@@ -1,19 +1,44 @@
-import * as React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Logout, Dashboard, LocalLibrary, BookmarkAdded, Grade } from "@mui/icons-material";
 import NavBarItem from '../../components/NavBarItem/NavBarItem';
 import { Link } from 'react-router-dom';
 import CourseCard from '../../components/CourseCard/CourseCard';
 import web_app_dev_img from '../../images/CourseCardImg/web-application-development.jpg';
+import axios from 'axios';
+import CourseContent from '../CourseContent/CourseContent';
+
+//////
+function AllCoursesDataFetching() {
+
+  const [courses, setCourses] = useState([])
+
+  useEffect(() => {
+    axios.get('http://localhost:8080/api/v1/course/getAllCourses')
+      .then(res => {
+        console.log(res)
+      })
+      .catch(err => {
+        console.log(err)
+      })
+  })
+}
+
+//////
+
 
 export const allCoursesListItems = (
+
   <React.Fragment>
     {
+      // CoursesDataFetching()
       [
         {
+          "status": '1',
           "title": "title 1",
           "image": web_app_dev_img
         },
         {
+          "status": '1',
           "title": "title 2",
           "image": web_app_dev_img
         },
@@ -38,12 +63,14 @@ export const allCoursesListItems = (
           "image": web_app_dev_img
         }
       ].map((item) => (
-        <CourseCard title={item.title} img={item.image} />
+        <Link to={"/CourseContent"}>
+          <CourseCard title={item.title} img={item.image} />
+        </Link>
       ))
-
     }
   </React.Fragment>
 );
+
 
 export const enrolledCoursesListItems = (
   <React.Fragment>
@@ -98,7 +125,7 @@ export const studentListItems = (
           "link": "/grades"
         }
       ].map((item) => (
-        <Link to={item.link} style={{textDecoration: 'none', color: 'black'}}>
+        <Link to={item.link} style={{ textDecoration: 'none', color: 'black' }}>
           <NavBarItem title={item.name} icon={item.icon} />
         </Link>
       ))
