@@ -7,7 +7,7 @@ function Dashboard() {
   return (
     <div>
         <Sidebar title={"Dashboard"} component={allCoursesListItems} />
-        {/* <Sidebar title={"Dashboard"} component={<DashboardCountCard />} /> */}
+        <Sidebar title={"Dashboard"} component={<DashboardCountCard />} />
     </div>
   )
 }
