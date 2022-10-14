@@ -6,6 +6,7 @@ import CourseCard from '../../components/CourseCard/CourseCard';
 import web_app_dev_img from '../../images/CourseCardImg/web-application-development.jpg';
 import axios from 'axios';
 import CourseContent from '../CourseContent/CourseContent';
+import EnrollmentsCourseCard from '../../components/CourseCard/EnrollmentsCourseCard';
 
 //////
 function AllCoursesDataFetching() {
@@ -33,12 +34,10 @@ export const allCoursesListItems = (
       // CoursesDataFetching()
       [
         {
-          "status": '1',
           "title": "title 1",
           "image": web_app_dev_img
         },
         {
-          "status": '1',
           "title": "title 2",
           "image": web_app_dev_img
         },
@@ -93,7 +92,7 @@ export const enrolledCoursesListItems = (
           "image": web_app_dev_img
         }
       ].map((item) => (
-        <CourseCard title={item.title} img={item.image} />
+        <EnrollmentsCourseCard title={item.title} img={item.image} />
       ))
 
     }
