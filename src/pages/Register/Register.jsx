@@ -1,12 +1,8 @@
-import { Visibility, VisibilityOff } from "@mui/icons-material";
 import {
   Box,
   Button,
-  Card,
   FormControl,
   Grid,
-  IconButton,
-  InputAdornment,
   InputLabel,
   MenuItem,
   OutlinedInput,
@@ -16,6 +12,7 @@ import {
   Typography,
 } from "@mui/material";
 import * as React from "react";
+import { Login } from "@mui/icons-material";
 import { Link } from "react-router-dom";
 
 function Register() {
@@ -64,7 +61,7 @@ function Register() {
                 <h1>Register</h1>
               </Box>
 
-              <TextField id="studentId" label="Student Id" variant="outlined" />
+              <TextField id="userId" label="User Id" variant="outlined" />
               <TextField id="name" label="Name" variant="outlined" />
               <TextField id="email" label="Email" variant="outlined" />
 
@@ -109,7 +106,7 @@ function Register() {
             <Box m={4}>
               <Typography align="center">
                 {" "}
-                Already Registered?<Link to={"#"}>Sign In</Link>
+                Already Registered?<Link to={"/login"}>Sign In</Link>
               </Typography>
             </Box>
           </Grid>
