@@ -46,8 +46,8 @@ function Login() {
           
               <MDBCol  MDBCol md='6' className='mt-5 text-white'>
             
-              <MDBInput wrapperClass='mb-4 w-100 ' name='email' label='Email address' id='formControlLg' type='email' size="lg"/>
-              <MDBInput wrapperClass='mb-4 w-100' name='password' label='Password' id='formControlLg' type='password' size="lg"/>
+              <MDBInput wrapperClass='mb-4 w-100 ' name='email' label='Email address' id='email' type='email' size="lg"/>
+              <MDBInput wrapperClass='mb-4 w-100' name='password' label='Password' id='password' type='password' size="lg"/>
 
               <MDBBtn className="mb-0 px-5 w-50 justify-content-start" size='lg'>Login</MDBBtn>
               <p className="small fw-bold mt-5 mr-3 pt-1 mb-2 justify-content-start text-dark" >Don't have an account? <a href="/Register" className="link-danger ml-2" style={{fontSize:"20px"}}>Register</a></p>
