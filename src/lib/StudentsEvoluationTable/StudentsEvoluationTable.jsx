@@ -8,28 +8,29 @@ import TableHead from "@mui/material/TableHead";
 import TablePagination from "@mui/material/TablePagination";
 import TableRow from "@mui/material/TableRow";
 import EditDeleteButton from "../../components/EditDeleteButton/EditDeleteButton";
+import EditButton from "../../components/EditDeleteButton/EditButton";
 
 const columns = [
   { id: "student_id", label: "Student ID", minWidth: 50 },
   { id: "updated_date", label: "Updated At", minWidth: 50 },
-  { id: "name", label: "Name", align: "center", minWidth: 200 },
+  { id: "name", label: "Name", align: "center", minWidth: 150 },
   {
     id: "marks",
     label: "Subject Marks",
     align: "center",
-    minWidth: 50,
+    minWidth: 40,
   },
   {
     id: "note",
     label: "Note",
     align: "center",
-    minWidth: 400,
+    minWidth: 200,
   },
   {
     id: "action",
     label: "Action",
     align: "center",
-    minWidth: 200,
+    minWidth: 150,
   },
 ];
 
@@ -38,13 +39,13 @@ function createData(student_id, updated_date, name, marks, note, action) {
 }
 
 const rows = [
-  createData("IM/2018/057", "07/10/2022", "Dinindu Chamikara", 90, "Very Good", <EditDeleteButton/> ),
-  createData("IM/2018/057", "07/10/2022", "Dinindu Chamikara", 90, "Very Good", <EditDeleteButton/> ),
-  createData("IM/2018/057", "07/10/2022", "Dinindu Chamikara", 90, "Very Good", <EditDeleteButton/> ),
-  createData("IM/2018/057", "07/10/2022", "Dinindu Chamikara", 90, "Very Good", <EditDeleteButton/> ),
-  createData("IM/2018/057", "07/10/2022", "Dinindu Chamikara", 90, "Very Good", <EditDeleteButton/> ),
-  createData("IM/2018/057", "07/10/2022", "Dinindu Chamikara", 90, "Very Good", <EditDeleteButton/> ),
-  createData("IM/2018/057", "07/10/2022", "Dinindu Chamikara", 90, "Very Good", <EditDeleteButton/> ),
+  createData("IM/2018/057", "07/10/2022", "Dinindu Chamikara", 90, "Very Good", <EditButton/> ),
+  createData("IM/2018/057", "07/10/2022", "Dinindu Chamikara", 90, "Very Good", <EditButton/> ),
+  createData("IM/2018/057", "07/10/2022", "Dinindu Chamikara", 90, "Very Good", <EditButton/> ),
+  createData("IM/2018/057", "07/10/2022", "Dinindu Chamikara", 90, "Very Good", <EditButton/> ),
+  createData("IM/2018/057", "07/10/2022", "Dinindu Chamikara", 90, "Very Good", <EditButton/> ),
+  createData("IM/2018/057", "07/10/2022", "Dinindu Chamikara", 90, "Very Good", <EditButton/> ),
+  createData("IM/2018/057", "07/10/2022", "Dinindu Chamikara", 90, "Very Good", <EditButton/> ),
 ];
 
 export default function StudentsEvoluationTable() {
