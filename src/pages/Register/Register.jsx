@@ -1,4 +1,5 @@
 import {
+  AppBar,
   Box,
   Button,
   FormControl,
@@ -9,6 +10,7 @@ import {
   Paper,
   Select,
   TextField,
+  Toolbar,
   Typography,
 } from "@mui/material";
 import * as React from "react";
@@ -16,29 +18,27 @@ import { Login } from "@mui/icons-material";
 import { Link } from "react-router-dom";
 
 function Register() {
-  const [values, setValues] = React.useState({
-    amount: "",
-    password: "",
-    weight: "",
-    weightRange: "",
-    showPassword: false,
-    direction: "row",
-  });
-
-  //password
-  const handleChange = (prop) => (event) => {
-    setValues({ ...values, [prop]: event.target.value });
-  };
+  
 
   //select
-  const [age, setAge] = React.useState("");
+  const [Role, setAge] = React.useState("");
+  const handleChange = (event) => {
+    setAge(event.target.value);
+  };
 
   //return
   return (
     <div align="center">
-      <Paper elevatio={20} sx={{}}>
+      <Paper >
+      <AppBar position="static" color="primary">
+          <Toolbar>
+            <Typography variant="h6" color="inherit" component="div">
+            <h2>University Learning Management System</h2>
+            </Typography>
+          </Toolbar>
+        </AppBar>
         <Grid container spacing={2}>
-          <Grid item xs={12} md={5}>
+          <Grid item xs={12} md={6}>
             <img
               alignItems="center"
               alt="HomePage"
@@ -46,20 +46,17 @@ function Register() {
               height="90%"
               sx={{mt:"2vw"}}
               src={
-                "https://img.freepik.com/free-vector/digital-presentation-concept-illustration_114360-8175.jpg?w=2000"
+                "https://www.paatham.in/assets/images/website-image/E%20Learning.webp"
               }
             />
           </Grid>
-          <Grid item xs={12} md={7}>
+          <Grid item xs={12} md={6}>
             <Box
               component="form"
-              sx={{ "& > :not(style)": { m: 1, width: "40vw" } }}
+              sx={{ "& > :not(style)": { m: 1, width: "30vw" } }}
               noValidate
               autoComplete="off"
             >
-              <Box p={2}>
-                <h1>Register</h1>
-              </Box>
 
               <TextField id="userId" label="User Id" variant="outlined" />
               <TextField id="name" label="Name" variant="outlined" />
@@ -91,7 +88,7 @@ function Register() {
                 <Select
                   labelId="demo-simple-select-label"
                   id="demo-simple-select"
-                  value={age}
+                  value={Role}
                   label="Role"
                   onChange={handleChange}
                 >
@@ -105,13 +102,20 @@ function Register() {
 
             <Box m={4}>
               <Typography align="center">
-                {" "}
                 Already Registered?<Link to={"/login"}>Sign In</Link>
               </Typography>
             </Box>
           </Grid>
         </Grid>
-      </Paper>
+        <footer><AppBar position="sticky" color="primary" >
+          <Toolbar>
+            <Typography  color="inherit" component="div">
+            Copyright © 2022. All rights reserved.
+            </Typography>
+          </Toolbar>
+        </AppBar></footer>
+        </Paper>
+        
     </div>
   );
 }
