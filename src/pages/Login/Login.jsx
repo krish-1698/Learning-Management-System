@@ -1,11 +1,11 @@
 import React from 'react';
-import {MDBContainer, MDBCol, MDBRow, MDBBtn, MDBIcon, MDBInput, MDBCheckbox } from 'mdb-react-ui-kit';
+import {MDBContainer, MDBCol, MDBRow, MDBBtn, MDBIcon, MDBInput } from 'mdb-react-ui-kit';
 import { textAlign } from '@mui/system';
 
 function Login() {
 
   return (
-    <MDBContainer fluid className="p-0 my-0 mx-0 h-custom" style={{scrollbar:'none'}}>
+    <MDBContainer fluid className="p-0 my-0 mx-0 h-custom" style={{scrollbar:'none', maxWidth: '100%', overflowX : 'hidden'}}>
        <MDBRow className="justify-content-center">
         <div className="d-flex flex-column flex-md-row text-center text-md-center justify-content-between pt-2 pb-1 px-4 px-xl-5 bg-primary">
 
@@ -18,7 +18,7 @@ function Login() {
 
              <MDBCol className="justify-content-center" col="9">
         
-              <h1 style={{textAlign:'center',fontSize:'36px',fontWeight:'bolder'}}>University Learning Management System</h1>
+              <h1 style={{textAlign:'center',color:'white',fontSize:'36px',fontWeight:'bolder'}}>University Learning Management System</h1>
 
              </MDBCol>   
        </div>
