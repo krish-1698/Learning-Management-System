@@ -2,12 +2,10 @@ import React from 'react'
 import Sidebar from '../../lib/Sidebar/Sidebar'
 import DashboardData from '../../components/DashboardCountCard/DashboardData';
 
-function Dashboard() {
+function Dashboard({userType}) {
   return (
     <div>
-        {/* <Sidebar title={"Dashboard"} component={allCoursesListItems} /> */}
-        {/* <Sidebar title={"Dashboard"} component={<DashboardCountCard />} /> */}
-        <Sidebar title={"Dashboard"} component={<DashboardData />} />
+        <Sidebar userType={userType} title={"Dashboard"} component={<DashboardData/>} />
     </div>
   )
 }
