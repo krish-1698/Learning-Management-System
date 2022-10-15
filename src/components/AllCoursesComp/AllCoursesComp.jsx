@@ -5,7 +5,7 @@ import CourseCard from "../CourseCard/CourseCard";
 
 function AllCoursesComp() {
   const [courses, setCourses] = useState([
-    
+
   ]);
 
   useEffect(() => {
@@ -18,13 +18,13 @@ function AllCoursesComp() {
       .catch((err) => {
         console.log(err);
       });
-  },[]);
+  }, []);
 
   return (
     <>
-        {courses.map((item) => (
-            <CourseCard title={item.title} />
-        ))}
+      {courses.map((item) => (
+        <CourseCard title={item.title} />
+      ))}
     </>
   );
 }
