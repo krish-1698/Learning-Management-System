@@ -7,7 +7,7 @@ function Login() {
   return (
     <MDBContainer fluid className="p-0 my-0 mx-0 h-custom" style={{scrollbar:'none'}}>
        <MDBRow className="justify-content-center">
-        <div className="d-flex flex-column flex-md-row text-center text-md-start justify-content-between pt-2 pb-1 px-4 px-xl-5 bg-primary">
+        <div className="d-flex flex-column flex-md-row text-center text-md-center justify-content-between pt-2 pb-1 px-4 px-xl-5 bg-primary">
 
         <div style={{}}>
              <MDBCol className="justify-content-center" col="3">
@@ -59,11 +59,12 @@ function Login() {
         </MDBCol>
 
       </MDBRow>
-      <MDBRow>
+
+      <MDBRow className='fixed-bottom'>
 
       <div className="d-flex flex-column flex-md-row text-center text-md-start justify-content-between py-4 px-4 px-xl-5 bg-primary">
 
-        <div className="text-white mb-3 mb-md-0">
+        <div className="text-white mb-3 mb-md-0" style={{background:'none'}}>
           Copyright © 2022. All rights reserved.
         </div>
 
