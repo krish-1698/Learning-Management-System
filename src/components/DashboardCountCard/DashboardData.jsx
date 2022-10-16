@@ -33,7 +33,7 @@ function DashboardData() {
       </div>
 
       <Typography sx={{ fontSize: "1.5rem", fontWeight: "bold", mt: 2, ml: 2 }}>
-        All Cources
+        All Courses
       </Typography>
 
       <div style={{ display: "flex", flexDirection: "row", flexWrap: "wrap" }}>

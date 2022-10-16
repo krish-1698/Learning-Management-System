@@ -7,9 +7,37 @@ import {
   TextField,
   Typography,
 } from "@mui/material";
-import React from "react";
+import React  from "react";
 
 function CreateAnnouncement({open, setOpen}) {
+  // const [announcement, setAnnouncements] = useState([]);
+
+  // useEffect(() => {
+  //   axios
+  //     .post("http://localhost:8080/api/v1/announcement/saveAnnouncement")
+  //     .then((res) => {
+  //       // setCourses(res.data);
+  //       setAnnouncements(res.data);
+  //       // console.log(res.data); 
+  //     })
+  //     .catch((err) => {
+  //       console.log(err);
+  //     });
+  // },[]);
+
+//   constructor(props) {
+//     super(props)
+
+//     this.state = {
+//             announcement: []
+//     }
+//     this.addAnnouncment = this.addAnnouncement.bind(this);
+// }
+
+  // addAnnouncement(){
+  //   this.props.history.push('/saveAnnouncment');
+  // }
+
   function handleClose() {
     setOpen(false);
   }
@@ -68,11 +96,11 @@ function CreateAnnouncement({open, setOpen}) {
               <Button
                 variant="outlined"
                 sx={{ color: "grey", marginRight: "0.5rem" }}
-                onClick={handleClose}
+                onClick={handleClose} 
               >
                 Close
               </Button>
-              <Button variant="contained">Save</Button>
+              <Button  variant="contained">Save</Button>
             </Box>
           </CardContent>
         </Card>
