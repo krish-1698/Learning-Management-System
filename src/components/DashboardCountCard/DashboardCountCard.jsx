@@ -1,12 +1,44 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
 import { CardActionArea } from '@mui/material';
+import axios from "axios";
 import LibraryBooksIcon from '@mui/icons-material/LibraryBooks';
 
-function DashboardCountCard() {
+function DashboardCountCard({coursesCount}) {
+
+    const [student, setStudents] = useState([]);
+
+  useEffect(() => {
+    axios
+      .get("http://localhost:8080/api/v1/student/getAllStudentCount")
+      .then((res) => {
+        // setCourses(res.data);
+        setStudents(res.data);
+        // console.log(res.data); 
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  },[]);
+
+  const [lecturer, setLecturers] = useState([]);
+
+  useEffect(() => {
+    axios
+      .get("http://localhost:8080/api/v1/lecturer/getAllLecturerCount")
+      .then((res) => {
+        // setCourses(res.data);
+        setLecturers(res.data);
+        // console.log(res.data); 
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  },[]);
+
     return (
         <div style={{display: "flex", flexDirection: "row", flexWrap: "wrap"}}>
             <Card sx={{ margin: 2, maxWidth: 246, width:246 }}>
@@ -20,10 +52,10 @@ function DashboardCountCard() {
                     />
                     <CardContent>
                         <Typography variant="h6" component="div" align='center'>
-                            No. of Cources
+                            No. of Courses
                         </Typography>
                         <Typography  variant="h4" component="div" align='center' fontWeight= "bold" >
-                            16
+                            {coursesCount}
                         </Typography>
                     </CardContent>
                 </CardActionArea>
@@ -41,9 +73,9 @@ function DashboardCountCard() {
                     <CardContent>
                         <Typography variant="h6" component="div" align='center'>
                             No. of Students
-                        </Typography>
+                        </Typography>   
                         <Typography  variant="h4" component="div" align='center' fontWeight= "bold" >
-                            64
+                            {student}
                         </Typography>
                     </CardContent>
                 </CardActionArea>
@@ -63,7 +95,7 @@ function DashboardCountCard() {
                             No. of Lecturers
                         </Typography>
                         <Typography  variant="h4" component="div" align='center' fontWeight= "bold" >
-                            12
+                            {lecturer}
                         </Typography>
                     </CardContent>
                 </CardActionArea>

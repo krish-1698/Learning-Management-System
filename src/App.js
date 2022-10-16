@@ -12,15 +12,15 @@ import { useState } from 'react';
 
 function App() {
 
-  const [userType, setUserType] = useState("lecturer")
+ // const [userType, setUserType] = useState("lecturer")
   // const [userType, setUserType] = useState("student")
-
+  const [userType, setUserType] = useState()
   return (
     <div>
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Dashboard userType={userType} />} />
-          <Route path="/login" element={<Login />} />
+          <Route path="/login" element={<Login setUserType={setUserType}/>} />
           <Route path="/register" element={<Register />} />
           <Route path="/courses" element={<Courses userType={userType} />} />
           <Route path="/enrollments" element={<Enrollments userType={userType}/>} />

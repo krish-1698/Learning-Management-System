@@ -5,11 +5,12 @@ import CardMedia from "@mui/material/CardMedia";
 import Typography from "@mui/material/Typography";
 import { CardActionArea, CardActions } from "@mui/material";
 import SwitchButton from "../SwitchButton/SwitchButton";
+import img from '../../images/CourseCardImg/web-application-development.jpg'
 
-function CourseCard({ title, img, data }) {
+function CourseCard({ data }) {
   return (
     <div>
-          <Card sx={{ margin: 2, maxWidth: 345 }}>
+          <Card sx={{ margin: 2, maxWidth: 346, minHeight:200 }}>
             <CardActionArea>
               <CardMedia component="img" height="130" image={img} alt="" />
               <CardContent>
