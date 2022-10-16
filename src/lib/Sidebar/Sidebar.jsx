@@ -11,7 +11,7 @@ import Divider from '@mui/material/Divider';
 import IconButton from '@mui/material/IconButton';
 import MenuIcon from '@mui/icons-material/Menu';
 import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
-import { secondaryListItems, studentListItems } from '../../lib/ListItems/ListItems';
+import { lecturerListItems, secondaryListItems, studentListItems } from '../../lib/ListItems/ListItems';
 import { Container, Grid } from '@mui/material';
 import Notification from '../../components/Notification/Notification';
 
@@ -63,7 +63,7 @@ const Drawer = styled(MuiDrawer, { shouldForwardProp: (prop) => prop !== 'open' 
 
 const mdTheme = createTheme();
 
-function SidebarContent({ titleHeading, coursesList, gradesTable, mainComp }) {
+function SidebarContent({ titleHeading, mainComp, userType }) {
   const [open, setOpen] = React.useState(true);
   const toggleDrawer = () => {
     setOpen(!open);
@@ -101,14 +101,6 @@ function SidebarContent({ titleHeading, coursesList, gradesTable, mainComp }) {
               {titleHeading}
             </Typography>
 
-            {/* notification icon */}
-            {/* <IconButton color="inherit">
-              <Badge badgeContent={4} color="secondary">
-                <NotificationsIcon />
-              </Badge>
-            </IconButton> */}
-
-            {/* notification popover   */}
             <div>
               <Notification />
             </div>
@@ -132,7 +124,8 @@ function SidebarContent({ titleHeading, coursesList, gradesTable, mainComp }) {
           </Toolbar>
           <Divider />
           <List component="nav">
-            {studentListItems}
+            {userType === "student" && studentListItems}
+            {userType === "lecturer" && lecturerListItems}
             <Divider sx={{ my: 1 }} />
             {secondaryListItems}
           </List>
@@ -165,6 +158,6 @@ function SidebarContent({ titleHeading, coursesList, gradesTable, mainComp }) {
   );
 }
 
-export default function Sidebar({ title, coursesList, gradesTable, component }) {
-  return <SidebarContent titleHeading={title} coursesList={coursesList} gradesTable={gradesTable} mainComp={component} />;
+export default function Sidebar({ title, component, userType }) {
+  return <SidebarContent titleHeading={title} mainComp={component} userType={userType} />;
 }

@@ -1,122 +1,121 @@
-import { Visibility, VisibilityOff } from "@mui/icons-material";
-import { Box, Button, FormControl, IconButton, InputAdornment, InputLabel, MenuItem, OutlinedInput, Paper, Select, TextField, Typography } from "@mui/material";
+import {
+  AppBar,
+  Box,
+  Button,
+  FormControl,
+  Grid,
+  InputLabel,
+  MenuItem,
+  OutlinedInput,
+  Paper,
+  Select,
+  TextField,
+  Toolbar,
+  Typography,
+} from "@mui/material";
 import * as React from "react";
+import { Login } from "@mui/icons-material";
 import { Link } from "react-router-dom";
 
 function Register() {
-  const [values, setValues] = React.useState({
-    amount: "",
-    password: "",
-    weight: "",
-    weightRange: "",
-    showPassword: false,
-    direction: "row",
-  });
-
-//password
-  const handleChange = (prop) => (event) => {
-    setValues({ ...values, [prop]: event.target.value });
-  };
-
-  const handleClickShowPassword = () => {
-    setValues({
-      ...values,
-      showPassword: !values.showPassword,
-    });
-  };
-
-  const handleMouseDownPassword = (event) => {
-    event.preventDefault();
-  };
+  
 
   //select
-  const [age, setAge] = React.useState('');
-
-
+  const [Role, setAge] = React.useState("");
+  const handleChange = (event) => {
+    setAge(event.target.value);
+  };
 
   //return
   return (
     <div align="center">
-      <Paper elevatio={20}  sx={{  width: '75%', overflow: 'hidden' }}>
-      <Box component="form"  sx={{"& > :not(style)": { m: 1, width: "50vw"} }} noValidate autoComplete="off">
-        <Box p={2}><h1>Register</h1></Box>
-        
+      <Paper >
+      <AppBar position="static" color="primary">
+          <Toolbar>
+            <Typography variant="h6" color="inherit" component="div">
+            <h2>University Learning Management System</h2>
+            </Typography>
+          </Toolbar>
+        </AppBar>
+        <Grid container spacing={2}>
+          <Grid item xs={12} md={6}>
+            <img
+              alignItems="center"
+              alt="HomePage"
+              width="100%"
+              height="90%"
+              sx={{mt:"2vw"}}
+              src={
+                "https://www.paatham.in/assets/images/website-image/E%20Learning.webp"
+              }
+            />
+          </Grid>
+          <Grid item xs={12} md={6}>
+            <Box
+              component="form"
+              sx={{ "& > :not(style)": { m: 1, width: "30vw" } }}
+              noValidate
+              autoComplete="off"
+            >
 
-        <TextField id="studentId" label="Student Id" variant="outlined" />
-        <TextField id="name" label="Name" variant="outlined" />
-        <TextField id="email" label="Email" variant="outlined" />
+              <TextField id="userId" label="User Id" variant="outlined" />
+              <TextField id="name" label="Name" variant="outlined" />
+              <TextField id="email" label="Email" variant="outlined" />
 
-        {/* Password */}
-        <FormControl variant="outlined">
-          <InputLabel htmlFor="password">Password</InputLabel>
-          <OutlinedInput
-            id="password"
-            type={values.showPassword ? "text" : "password"}
-            value={values.password}
-            onChange={handleChange("password")}
-            endAdornment={
-              <InputAdornment position="end">
-                <IconButton
-                  aria-label="password"
-                  onClick={handleClickShowPassword}
-                  onMouseDown={handleMouseDownPassword}
-                  edge="end"
+              {/* Password */}
+              <TextField
+                required
+                fullWidth
+                name="password"
+                label="Password"
+                type="password"
+                id="password"
+                autoComplete="new-password"
+              />
+
+              <TextField
+                required
+                fullWidth
+                name="cPassword"
+                label="Confirm Password"
+                type="password"
+                id="cpassword"
+                autoComplete="new-password"
+              />
+
+              <FormControl fullWidth>
+                <InputLabel id="role">Role</InputLabel>
+                <Select
+                  labelId="demo-simple-select-label"
+                  id="demo-simple-select"
+                  value={Role}
+                  label="Role"
+                  onChange={handleChange}
                 >
-                  {values.showPassword ? <VisibilityOff /> : <Visibility />}
-                </IconButton>
-              </InputAdornment>
-            }
-            label="Password"
-          />
-        </FormControl>
+                  <MenuItem value={"Student"}>Student</MenuItem>
+                  <MenuItem value={"Lecture"}>Lecture</MenuItem>
+                </Select>
+              </FormControl>
 
-        <FormControl variant="outlined">
-          <InputLabel htmlFor="confirmPassorwd">
-            Confirm Password
-          </InputLabel>
-          <OutlinedInput
-            id="confirmPassowrd"
-            type={values.showPassword ? "text" : "password"}
-           /*  value={values.password}
-            onChange={handleChange("password")} */
-            endAdornment={
-              <InputAdornment position="end">
-                <IconButton
-                  aria-label="confirmPassword"
-                  onClick={handleClickShowPassword}
-                  onMouseDown={handleMouseDownPassword}
-                  edge="end"
-                >
-                  {values.showPassword ? <VisibilityOff /> : <Visibility />}
-                </IconButton>
-              </InputAdornment>
-            }
-            label=" Password"
-          />
-        </FormControl>
+              <Button variant="contained">Register</Button>
+            </Box>
 
-        <FormControl fullWidth>
-        <InputLabel id="role">Role</InputLabel>
-        <Select
-          labelId="demo-simple-select-label"
-          id="demo-simple-select"
-          value={age}
-          label="Role"
-          onChange={handleChange}
-        >
-          <MenuItem value={'Student'}>Student</MenuItem>
-          <MenuItem value={'Lecture'}>Lecture</MenuItem>
-        </Select>
-      </FormControl>
-            
-        <Button variant="contained">Register</Button>
+            <Box m={4}>
+              <Typography align="center">
+                Already Registered?<Link to={"/login"}>Sign In</Link>
+              </Typography>
+            </Box>
+          </Grid>
+        </Grid>
+        <footer><AppBar position="sticky" color="primary" >
+          <Toolbar>
+            <Typography  color="inherit" component="div">
+            Copyright © 2022. All rights reserved.
+            </Typography>
+          </Toolbar>
+        </AppBar></footer>
+        </Paper>
         
-      </Box>
-
-      <Box  m={4}>
-        <Typography align="center" > Already Registered?<Link to={"#"}>Sign In</Link></Typography>
-      </Box>
-      </Paper>
     </div>
   );
 }
