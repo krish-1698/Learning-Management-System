@@ -8,19 +8,24 @@ import Courses from './pages/Courses/Courses';
 import Enrollments from './pages/Enrollments/Enrollments';
 import Grades from './pages/Grades/Grades';
 import CourseContent from './lib/CourseContent/CourseContent';
+import { useState } from 'react';
 
 function App() {
+
+  const [userType, setUserType] = useState("lecturer")
+  // const [userType, setUserType] = useState("student")
+
   return (
     <div>
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<Dashboard />} />
+          <Route path="/" element={<Dashboard userType={userType} />} />
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
-          <Route path="/courses" element={<Courses />} />
-          <Route path="/enrollments" element={<Enrollments />} />
-          <Route path="/grades" element={<Grades />} />
-          <Route path="/CourseContent" element={<CourseContent />} />
+          <Route path="/courses" element={<Courses userType={userType} />} />
+          <Route path="/enrollments" element={<Enrollments userType={userType}/>} />
+          <Route path="/grades" element={<Grades userType={userType} />}  />
+          <Route path="/CourseContent" element={<CourseContent userType={userType}/>} />
         </Routes>
       </BrowserRouter>
     </div>
