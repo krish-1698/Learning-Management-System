@@ -48,8 +48,38 @@ function AllCoursesDataFetching() {
 export const allCoursesListItems = (
   <React.Fragment>
     {
-      AllCoursesDataFetching().map((item) => (
-        <CourseCard title={item.title} img={web_app_dev_img} data={item} />
+      // CoursesDataFetching()
+      [
+        {
+          title: "title 1",
+          image: web_app_dev_img,
+        },
+        {
+          title: "title 2",
+          image: web_app_dev_img,
+        },
+        {
+          title: "title 3",
+          image: web_app_dev_img,
+        },
+        {
+          title: "title 4",
+          image: web_app_dev_img,
+        },
+        {
+          title: "title 5",
+          image: web_app_dev_img,
+        },
+        {
+          title: "title 6",
+          image: web_app_dev_img,
+        },
+        {
+          title: "title 7",
+          image: web_app_dev_img,
+        },
+      ].map((item) => (
+        <CourseCard title={item.title} img={item.image} data={item} />
       ))
       // [
       //   {

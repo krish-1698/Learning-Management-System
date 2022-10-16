@@ -6,7 +6,7 @@ import Typography from '@mui/material/Typography';
 import { CardActionArea } from '@mui/material';
 import LibraryBooksIcon from '@mui/icons-material/LibraryBooks';
 
-function DashboardCountCard() {
+function DashboardCountCard({coursesCount}) {
     return (
         <div style={{display: "flex", flexDirection: "row", flexWrap: "wrap"}}>
             <Card sx={{ margin: 2, maxWidth: 246, width:246 }}>
@@ -23,7 +23,7 @@ function DashboardCountCard() {
                             No. of Cources
                         </Typography>
                         <Typography  variant="h4" component="div" align='center' fontWeight= "bold" >
-                            16
+                            {coursesCount}
                         </Typography>
                     </CardContent>
                 </CardActionArea>
