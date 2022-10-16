@@ -6,7 +6,7 @@ import Typography from "@mui/material/Typography";
 import { CardActionArea, CardActions } from "@mui/material";
 import SwitchButton from "../SwitchButton/SwitchButton";
 
-function CourseCard({ title, img }) {
+function CourseCard({ title, img, data }) {
   return (
     <div>
           <Card sx={{ margin: 2, maxWidth: 345 }}>
@@ -14,7 +14,7 @@ function CourseCard({ title, img }) {
               <CardMedia component="img" height="130" image={img} alt="" />
               <CardContent>
                 <Typography gutterBottom variant="h6" component="div">
-                  {title}
+                  {data.title}
                 </Typography>
               </CardContent>
             </CardActionArea>
