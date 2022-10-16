@@ -25,18 +25,7 @@ function CreateAnnouncement({open, setOpen}) {
   //     });
   // },[]);
 
-//   constructor(props) {
-//     super(props)
-
-//     this.state = {
-//             announcement: []
-//     }
-//     this.addAnnouncment = this.addAnnouncement.bind(this);
-// }
-
-  // addAnnouncement(){
-  //   this.props.history.push('/saveAnnouncment');
-  // }
+  
 
   function handleClose() {
     setOpen(false);

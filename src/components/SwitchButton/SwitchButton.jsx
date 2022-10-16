@@ -43,7 +43,7 @@ function SwitchButton() {
             <FormGroup>
                 <FormControlLabel
                     label="Enrollment"
-                    control={<EnrollmentSwitch  />}                 
+                    control={<EnrollmentSwitch />}                 
                 />
             </FormGroup>
         </div>
