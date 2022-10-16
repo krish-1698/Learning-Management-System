@@ -1,9 +1,55 @@
 import React from 'react';
 import {MDBContainer, MDBCol, MDBRow, MDBBtn, MDBIcon, MDBInput } from 'mdb-react-ui-kit';
 import { textAlign } from '@mui/system';
+import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import axios from 'axios';
 
-function Login() {
+function Login({setUserType}) {
+  let navigate = useNavigate();
 
+  const [loginInfo, setLoginInfo] = useState({
+    email: null,
+    password: null,
+  })
+
+
+  const handleOnChangeEmail = (event) => {
+    setLoginInfo({
+      ...loginInfo,
+      email: event.target.value,
+    })
+  }
+
+  const handleOnChangePassword = (event) => {
+    setLoginInfo({
+      ...loginInfo,
+      password: event.target.value,
+    })
+  }
+
+  //const baseUrl = 'http://localhost:8080/api/v1/user/getUser';
+  const loginUser = () => {
+    axios
+      .get(`http://localhost:8080/api/v1/user/getUser/${loginInfo.email}/${loginInfo.password}`)
+      .then((res) => {
+        // setCourses(res.data);
+        // setName(res.data);
+        console.log(res.data);
+        if(res.data.role === "Lecturer"){
+          setUserType("lecturer")
+        }else if(res.data.role === "Student"){
+          setUserType("student")
+        }else{
+          navigate("/login")
+        }
+        
+        navigate("/")
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  }
   return (
     <MDBContainer fluid className="p-0 my-0 mx-0 h-custom" style={{scrollbar:'none', maxWidth: '100%', overflowX : 'hidden'}}>
        <MDBRow className="justify-content-center">
@@ -46,10 +92,10 @@ function Login() {
           
               <MDBCol  MDBCol md='6' className='mt-5 text-white'>
             
-              <MDBInput wrapperClass='mb-4 w-100 ' name='email' label='Email address' id='email' type='email' size="lg"/>
-              <MDBInput wrapperClass='mb-4 w-100' name='password' label='Password' id='password' type='password' size="lg"/>
+              <MDBInput wrapperClass='mb-4 w-100 ' name='email' onChange={handleOnChangeEmail}  label='Email address' id='email' type='email' size="lg"/>
+              <MDBInput wrapperClass='mb-4 w-100' name='password' onChange={handleOnChangePassword} label='Password' id='password' type='password' size="lg"/>
 
-              <MDBBtn className="mb-0 px-5 w-50 justify-content-start" size='lg'>Login</MDBBtn>
+              <MDBBtn className="mb-0 px-5 w-50 justify-content-start" size='lg' onClick={loginUser} >Login</MDBBtn>
               <p className="small fw-bold mt-5 mr-3 pt-1 mb-2 justify-content-start text-dark" >Don't have an account? <a href="/Register" className="link-danger ml-2" style={{fontSize:"20px"}}>Register</a></p>
 
            </MDBCol>
