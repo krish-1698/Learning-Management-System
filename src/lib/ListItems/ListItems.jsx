@@ -35,7 +35,7 @@ function AllCoursesDataFetching() {
 export const allCoursesListItems = (
   <React.Fragment>
     {
-      // CoursesDataFetching()
+
       [
         {
           title: "title 1",
