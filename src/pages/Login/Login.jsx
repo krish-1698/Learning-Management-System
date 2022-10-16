@@ -92,14 +92,8 @@ function Login({setUserType}) {
           
               <MDBCol  MDBCol md='6' className='mt-5 text-white'>
             
-<<<<<<< HEAD
-              <MDBInput wrapperClass='mb-4 w-100 ' name='email' label='Email address' id='email' type='email' size="lg"/>
-              
-              <MDBInput wrapperClass='mb-4 w-100' name='password' label='Password' id='password' type='password' size="lg"/>
-=======
               <MDBInput wrapperClass='mb-4 w-100 ' name='email' onChange={handleOnChangeEmail}  label='Email address' id='email' type='email' size="lg"/>
               <MDBInput wrapperClass='mb-4 w-100' name='password' onChange={handleOnChangePassword} label='Password' id='password' type='password' size="lg"/>
->>>>>>> 7ff28b9074f7d8db39ee9d19427c13452745f686
 
               <MDBBtn className="mb-0 px-5 w-50 justify-content-start" size='lg' onClick={loginUser} >Login</MDBBtn>
               <p className="small fw-bold mt-5 mr-3 pt-1 mb-2 justify-content-start text-dark" >Don't have an account? <a href="/Register" className="link-danger ml-2" style={{fontSize:"20px"}}>Register</a></p>
