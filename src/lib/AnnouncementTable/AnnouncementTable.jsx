@@ -8,6 +8,7 @@ import TableHead from "@mui/material/TableHead";
 import TablePagination from "@mui/material/TablePagination";
 import TableRow from "@mui/material/TableRow";
 import EditDeleteButton from "../../components/EditDeleteButton/EditDeleteButton";
+import AnnouncementService from "../../service/AnnouncementService";
 
 const columns = [
   { id: "anouncement_id", label: "No.", minWidth: 50 },
@@ -47,6 +48,10 @@ const rows = [
 ];
 
 export default function AnnouncementTable() {
+
+
+ 
+
   const [page, setPage] = React.useState(0);
   const [rowsPerPage, setRowsPerPage] = React.useState(10);
 
